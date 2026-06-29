@@ -1,7 +1,8 @@
 ---
 name: detecting-aws-credential-exposure-with-trufflehog
-description: 'Detecting exposed AWS credentials in source code repositories, CI/CD pipelines, and configuration files using
-  TruffleHog, git-secrets, and AWS-native detection mechanisms to prevent credential theft and unauthorized account access.
+description: 'Detecting exposed AWS credentials in source code repositories, CI/CD
+  pipelines, and configuration files using TruffleHog, git-secrets, and AWS-native
+  detection mechanisms to prevent credential theft and unauthorized account access.
 
   '
 domain: cybersecurity
@@ -21,6 +22,37 @@ nist_csf:
 - ID.AM-08
 - GV.SC-06
 - DE.CM-01
+mitre_attack:
+- T1552.001
+- T1552
+- T1078.004
+- T1589.001
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - initial-access
+  techniques:
+  - id: T1593
+    name: Search Open Websites/Domains
+    tactic: reconnaissance
+    source: attack
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
+  - id: F1006.001
+    name: 'Account Takeover: Exposed API Key'
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: T1550.001
+    name: 'Use Alternate Authentication Material: Application Access Token'
+    tactic: initial-access
+    source: attack
 ---
 
 # Detecting AWS Credential Exposure with TruffleHog

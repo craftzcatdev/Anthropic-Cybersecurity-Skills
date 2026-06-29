@@ -1,7 +1,8 @@
 ---
 name: implementing-anti-phishing-training-program
-description: Security awareness training is the human layer of phishing defense. An effective anti-phishing training program
-  combines regular simulations, interactive learning modules, metric tracking, and positiv
+description: Security awareness training is the human layer of phishing defense. An
+  effective anti-phishing training program combines regular simulations, interactive
+  learning modules, metric tracking, and positiv
 domain: cybersecurity
 subdomain: phishing-defense
 tags:
@@ -20,6 +21,38 @@ nist_csf:
 - DE.CM-09
 - RS.CO-02
 - DE.AE-02
+mitre_attack:
+- T1566
+- T1598
+- T1534
+- T1036
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - initial-access
+  - stealth
+  techniques:
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: T1598
+    name: Phishing for Information
+    tactic: reconnaissance
+    source: attack
+  - id: T1672
+    name: Email Spoofing
+    tactic: stealth
+    source: attack
+  - id: F1032
+    name: Impersonate Official
+    tactic: initial-access
+    source: f3
+  - id: F1031
+    name: Impersonate Account Holder
+    tactic: initial-access
+    source: f3
 ---
 # Implementing Anti-Phishing Training Program
 

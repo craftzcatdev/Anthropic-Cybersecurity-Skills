@@ -1,7 +1,7 @@
 ---
 name: detecting-credential-dumping-techniques
-description: Detect LSASS credential dumping, SAM database extraction, and NTDS.dit theft using Sysmon Event ID 10, Windows
-  Security logs, and SIEM correlation rules
+description: Detect LSASS credential dumping, SAM database extraction, and NTDS.dit
+  theft using Sysmon Event ID 10, Windows Security logs, and SIEM correlation rules
 domain: cybersecurity
 subdomain: threat-detection
 tags:
@@ -26,6 +26,39 @@ nist_csf:
 - DE.AE-02
 - DE.AE-06
 - ID.RA-05
+mitre_attack:
+- T1078
+- T1190
+- T1059
+- T1003
+- T1110
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - positioning
+  - initial-access
+  techniques:
+  - id: T1555
+    name: Credentials from Password Stores
+    tactic: reconnaissance
+    source: attack
+  - id: T1555.003
+    name: 'Credentials from Password Stores: Credentials from Web Browsers'
+    tactic: reconnaissance
+    source: attack
+  - id: T1539
+    name: Steal Web Session Cookie
+    tactic: positioning
+    source: attack
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: T1110.002
+    name: 'Brute Force: Password Cracking'
+    tactic: initial-access
+    source: attack
 ---
 
 # Detecting Credential Dumping Techniques

@@ -1,7 +1,8 @@
 ---
 name: detecting-t1003-credential-dumping-with-edr
-description: Detect OS credential dumping techniques targeting LSASS memory, SAM database, NTDS.dit, and cached credentials
-  using EDR telemetry, Sysmon process access monitoring, and Windows security event correlation.
+description: Detect OS credential dumping techniques targeting LSASS memory, SAM database,
+  NTDS.dit, and cached credentials using EDR telemetry, Sysmon process access monitoring,
+  and Windows security event correlation.
 domain: cybersecurity
 subdomain: threat-hunting
 tags:
@@ -27,6 +28,38 @@ nist_csf:
 - DE.AE-02
 - DE.AE-07
 - ID.RA-05
+mitre_attack:
+- T1003.001
+- T1003.002
+- T1003.003
+- T1003.006
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - positioning
+  - initial-access
+  techniques:
+  - id: T1555
+    name: Credentials from Password Stores
+    tactic: reconnaissance
+    source: attack
+  - id: T1555.003
+    name: 'Credentials from Password Stores: Credentials from Web Browsers'
+    tactic: reconnaissance
+    source: attack
+  - id: T1539
+    name: Steal Web Session Cookie
+    tactic: positioning
+    source: attack
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
 ---
 
 # Detecting T1003 Credential Dumping with EDR

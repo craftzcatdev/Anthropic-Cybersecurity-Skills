@@ -1,10 +1,12 @@
 ---
 name: performing-ransomware-tabletop-exercise
-description: 'Plans and facilitates tabletop exercises simulating ransomware incidents to test organizational readiness, decision-making,
-  and communication procedures. Designs realistic scenarios based on current ransomware threat actors (LockBit, ALPHV/BlackCat,
-  Cl0p), injects covering double extortion, backup destruction, and regulatory notification requirements. Evaluates participant
-  responses against NIST CSF and CISA guidelines. Activates for requests involving ransomware tabletop, incident response
-  exercise, or ransomware readiness drill.
+description: 'Plans and facilitates tabletop exercises simulating ransomware incidents
+  to test organizational readiness, decision-making, and communication procedures.
+  Designs realistic scenarios based on current ransomware threat actors (LockBit,
+  ALPHV/BlackCat, Cl0p), injects covering double extortion, backup destruction, and
+  regulatory notification requirements. Evaluates participant responses against NIST
+  CSF and CISA guidelines. Activates for requests involving ransomware tabletop, incident
+  response exercise, or ransomware readiness drill.
 
   '
 domain: cybersecurity
@@ -23,6 +25,34 @@ nist_csf:
 - RS.MA-01
 - RC.RP-01
 - PR.IR-01
+mitre_attack:
+- T1078
+- T1190
+- T1059
+- T1486
+- T1490
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - positioning
+  - monetization
+  techniques:
+  - id: T1531
+    name: Account Access Removal
+    tactic: positioning
+    source: attack
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1047
+    name: Transfer of funds
+    tactic: monetization
+    source: f3
+  - id: F1017.001
+    name: 'Conversion to Physical Monetary Instruments: Cash'
+    tactic: monetization
+    source: f3
 ---
 # Performing Ransomware Tabletop Exercise
 

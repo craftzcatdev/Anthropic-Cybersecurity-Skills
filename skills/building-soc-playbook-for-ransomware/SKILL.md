@@ -1,8 +1,10 @@
 ---
 name: building-soc-playbook-for-ransomware
-description: 'Builds a structured SOC incident response playbook for ransomware attacks covering detection, containment, eradication,
-  and recovery phases with specific SIEM queries, isolation procedures, and decision trees. Use when SOC teams need formalized
-  response procedures for ransomware incidents aligned to NIST SP 800-61 and MITRE ATT&CK ransomware techniques.
+description: 'Builds a structured SOC incident response playbook for ransomware attacks
+  covering detection, containment, eradication, and recovery phases with specific
+  SIEM queries, isolation procedures, and decision trees. Use when SOC teams need
+  formalized response procedures for ransomware incidents aligned to NIST SP 800-61
+  and MITRE ATT&CK ransomware techniques.
 
   '
 domain: cybersecurity
@@ -19,7 +21,30 @@ mitre_attack:
 - T1486
 - T1490
 - T1489
-- T1570
+- T1566
+- T1059.001
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - monetization
+  techniques:
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: T1110
+    name: Brute Force
+    tactic: initial-access
+    source: attack
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1047
+    name: Transfer of funds
+    tactic: monetization
+    source: f3
 version: '1.0'
 author: mahipal
 license: Apache-2.0

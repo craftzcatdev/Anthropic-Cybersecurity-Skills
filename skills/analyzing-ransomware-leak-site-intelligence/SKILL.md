@@ -1,7 +1,8 @@
 ---
 name: analyzing-ransomware-leak-site-intelligence
-description: Monitor and analyze ransomware group data leak sites (DLS) to track victim postings, extract threat intelligence
-  on group tactics, and assess sector-specific ransomware risk for proactive defense.
+description: Monitor and analyze ransomware group data leak sites (DLS) to track victim
+  postings, extract threat intelligence on group tactics, and assess sector-specific
+  ransomware risk for proactive defense.
 domain: cybersecurity
 subdomain: threat-intelligence
 tags:
@@ -10,7 +11,7 @@ tags:
 - data-leak
 - extortion
 - threat-intelligence
-- monitoring
+- leak-site-monitoring
 - dls
 - victim-tracking
 version: '1.0'
@@ -21,6 +22,33 @@ nist_csf:
 - ID.RA-05
 - DE.CM-01
 - DE.AE-02
+mitre_attack:
+- T1657
+- T1486
+- T1567.002
+- T1591
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - monetization
+  - reconnaissance
+  techniques:
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1029
+    name: Gather Customer Information
+    tactic: reconnaissance
+    source: f3
+  - id: T1593
+    name: Search Open Websites/Domains
+    tactic: reconnaissance
+    source: attack
+  - id: F1025.003
+    name: 'Electronic Funds Transfer: Wire Transfer'
+    tactic: monetization
+    source: f3
 ---
 # Analyzing Ransomware Leak Site Intelligence
 

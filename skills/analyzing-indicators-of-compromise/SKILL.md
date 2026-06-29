@@ -1,9 +1,11 @@
 ---
 name: analyzing-indicators-of-compromise
-description: 'Analyzes indicators of compromise (IOCs) including IP addresses, domains, file hashes, URLs, and email artifacts
-  to determine maliciousness confidence, campaign attribution, and blocking priority. Use when triaging IOCs from phishing
-  emails, security alerts, or external threat feeds; enriching raw IOCs with multi-source intelligence; or making block/monitor/whitelist
-  decisions. Activates for requests involving VirusTotal, AbuseIPDB, MalwareBazaar, MISP, or IOC enrichment pipelines.
+description: 'Analyzes indicators of compromise (IOCs) including IP addresses, domains,
+  file hashes, URLs, and email artifacts to determine maliciousness confidence, campaign
+  attribution, and blocking priority. Use when triaging IOCs from phishing emails,
+  security alerts, or external threat feeds; enriching raw IOCs with multi-source
+  intelligence; or making block/monitor/whitelist decisions. Activates for requests
+  involving VirusTotal, AbuseIPDB, MalwareBazaar, MISP, or IOC enrichment pipelines.
 
   '
 domain: cybersecurity
@@ -27,6 +29,34 @@ nist_csf:
 - ID.RA-05
 - DE.CM-01
 - DE.AE-02
+mitre_attack:
+- T1071
+- T1105
+- T1041
+- T1567
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - resource-development
+  - initial-access
+  techniques:
+  - id: T1598
+    name: Phishing for Information
+    tactic: reconnaissance
+    source: attack
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: T1583.001
+    name: 'Acquire Infrastructure: Domains'
+    tactic: resource-development
+    source: attack
+  - id: F1020.002
+    name: 'Create Fake Materials: Fake Website'
+    tactic: resource-development
+    source: f3
 ---
 # Analyzing Indicators of Compromise
 

@@ -1,9 +1,10 @@
 ---
 name: implementing-hashicorp-vault-dynamic-secrets
-description: 'Implements HashiCorp Vault dynamic secrets engines for database credentials, AWS IAM keys, and PKI certificates
-  with automatic generation, lease management, and credential rotation to eliminate static secrets in application configurations.
-  Activates for requests involving Vault secrets engine configuration, dynamic database credentials, ephemeral cloud credentials,
-  or automated secret rotation.
+description: 'Implements HashiCorp Vault dynamic secrets engines for database credentials,
+  AWS IAM keys, and PKI certificates with automatic generation, lease management,
+  and credential rotation to eliminate static secrets in application configurations.
+  Activates for requests involving Vault secrets engine configuration, dynamic database
+  credentials, ephemeral cloud credentials, or automated secret rotation.
 
   '
 domain: cybersecurity
@@ -23,6 +24,44 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  - stealth
+  - resource-development
+  techniques:
+  - id: F1006.001
+    name: 'Account Takeover: Exposed API Key'
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: T1586
+    name: Compromise Accounts
+    tactic: resource-development
+    source: attack
+  - id: T1555
+    name: Credentials from Password Stores
+    tactic: reconnaissance
+    source: attack
+  - id: F1005.004
+    name: 'Account Manipulation: Change Account Details'
+    tactic: positioning
+    source: f3
+  - id: F1033
+    name: Insider Access Abuse
+    tactic: initial-access
+    source: f3
 ---
 
 # Implementing HashiCorp Vault Dynamic Secrets

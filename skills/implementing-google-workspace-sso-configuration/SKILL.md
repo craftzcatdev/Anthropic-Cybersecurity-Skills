@@ -1,7 +1,8 @@
 ---
 name: implementing-google-workspace-sso-configuration
-description: Configure SAML 2.0 single sign-on for Google Workspace with a third-party identity provider, enabling centralized
-  authentication and enforcing organization-wide access policies.
+description: Configure SAML 2.0 single sign-on for Google Workspace with a third-party
+  identity provider, enabling centralized authentication and enforcing organization-wide
+  access policies.
 domain: cybersecurity
 subdomain: identity-access-management
 tags:
@@ -19,6 +20,37 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  techniques:
+  - id: T1110
+    name: Brute Force
+    tactic: initial-access
+    source: attack
+  - id: T1110.004
+    name: 'Brute Force:  Credential Stuffing'
+    tactic: initial-access
+    source: attack
+  - id: T1539
+    name: Steal Web Session Cookie
+    tactic: positioning
+    source: attack
+  - id: F1004
+    name: Access with Stolen Session Cookie
+    tactic: initial-access
+    source: f3
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
 ---
 
 # Implementing Google Workspace SSO Configuration

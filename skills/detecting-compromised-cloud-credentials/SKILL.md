@@ -1,7 +1,8 @@
 ---
 name: detecting-compromised-cloud-credentials
-description: 'Detecting compromised cloud credentials across AWS, Azure, and GCP by analyzing anomalous API activity, impossible
-  travel patterns, unauthorized resource provisioning, and credential abuse indicators using GuardDuty, Defender for Identity,
+description: 'Detecting compromised cloud credentials across AWS, Azure, and GCP by
+  analyzing anomalous API activity, impossible travel patterns, unauthorized resource
+  provisioning, and credential abuse indicators using GuardDuty, Defender for Identity,
   and SCC Event Threat Detection.
 
   '
@@ -22,6 +23,39 @@ nist_csf:
 - ID.AM-08
 - GV.SC-06
 - DE.CM-01
+mitre_attack:
+- T1078.004
+- T1530
+- T1537
+- T1580
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  - defense-impairment
+  techniques:
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: F1006.001
+    name: 'Account Takeover: Exposed API Key'
+    tactic: initial-access
+    source: f3
+  - id: T1110.004
+    name: 'Brute Force:  Credential Stuffing'
+    tactic: initial-access
+    source: attack
+  - id: T1586.003
+    name: 'Compromise Accounts: Cloud Accounts'
+    tactic: resource-development
+    source: attack
+  - id: F1005
+    name: Account Manipulation
+    tactic: defense-impairment
+    source: f3
 ---
 
 # Detecting Compromised Cloud Credentials

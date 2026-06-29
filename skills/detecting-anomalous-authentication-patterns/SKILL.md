@@ -1,9 +1,10 @@
 ---
 name: detecting-anomalous-authentication-patterns
-description: 'Detects anomalous authentication patterns using UEBA analytics, statistical baselines, and machine learning
-  models to identify impossible travel, credential stuffing, brute force, password spraying, and compromised account behaviors
-  across authentication logs. Activates for requests involving authentication anomaly detection, login behavior analysis,
-  UEBA implementation, or suspicious sign-in investigation.
+description: 'Detects anomalous authentication patterns using UEBA analytics, statistical
+  baselines, and machine learning models to identify impossible travel, credential
+  stuffing, brute force, password spraying, and compromised account behaviors across
+  authentication logs. Activates for requests involving authentication anomaly detection,
+  login behavior analysis, UEBA implementation, or suspicious sign-in investigation.
 
   '
 domain: cybersecurity
@@ -30,6 +31,38 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1110
+- T1110.003
+- T1110.004
+- T1078
+- T1021
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  techniques:
+  - id: T1110.004
+    name: 'Brute Force:  Credential Stuffing'
+    tactic: initial-access
+    source: attack
+  - id: T1110.003
+    name: 'Brute Force: Password Spraying'
+    tactic: initial-access
+    source: attack
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: T1539
+    name: Steal Web Session Cookie
+    tactic: positioning
+    source: attack
 ---
 
 # Detecting Anomalous Authentication Patterns

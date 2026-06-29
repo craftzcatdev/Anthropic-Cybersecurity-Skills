@@ -1,7 +1,8 @@
 ---
 name: performing-access-recertification-with-saviynt
-description: Configure and execute access recertification campaigns in Saviynt Enterprise Identity Cloud to validate user
-  entitlements, revoke excessive access, and maintain compliance with SOX, SOC2, and HIPAA.
+description: Configure and execute access recertification campaigns in Saviynt Enterprise
+  Identity Cloud to validate user entitlements, revoke excessive access, and maintain
+  compliance with SOX, SOC2, and HIPAA.
 domain: cybersecurity
 subdomain: identity-access-management
 tags:
@@ -19,6 +20,40 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+- T1071
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  - defense-impairment
+  - resource-development
+  techniques:
+  - id: T1586
+    name: Compromise Accounts
+    tactic: resource-development
+    source: attack
+  - id: F1033
+    name: Insider Access Abuse
+    tactic: initial-access
+    source: f3
+  - id: F1005
+    name: Account Manipulation
+    tactic: positioning
+    source: f3
+  - id: F1005.002
+    name: 'Account Manipulation: Add Authorized User'
+    tactic: positioning
+    source: f3
+  - id: F1005.007
+    name: 'Account Manipulation: Enable Account Features'
+    tactic: defense-impairment
+    source: f3
 ---
 
 # Performing Access Recertification with Saviynt

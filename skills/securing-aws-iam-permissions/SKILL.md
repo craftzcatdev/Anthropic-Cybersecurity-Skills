@@ -1,7 +1,8 @@
 ---
 name: securing-aws-iam-permissions
-description: 'This skill guides practitioners through hardening AWS Identity and Access Management configurations to enforce
-  least privilege access across cloud accounts. It covers IAM policy scoping, permission boundaries, Access Analyzer integration,
+description: 'This skill guides practitioners through hardening AWS Identity and Access
+  Management configurations to enforce least privilege access across cloud accounts.
+  It covers IAM policy scoping, permission boundaries, Access Analyzer integration,
   and credential rotation strategies to reduce the blast radius of compromised identities.
 
   '
@@ -21,6 +22,38 @@ nist_csf:
 - ID.AM-08
 - GV.SC-06
 - DE.CM-01
+mitre_attack:
+- T1078.004
+- T1530
+- T1537
+- T1580
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  techniques:
+  - id: F1006.001
+    name: 'Account Takeover: Exposed API Key'
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: T1550.001
+    name: 'Use Alternate Authentication Material: Application Access Token'
+    tactic: initial-access
+    source: attack
+  - id: T1110.003
+    name: 'Brute Force: Password Spraying'
+    tactic: initial-access
+    source: attack
+  - id: F1005.004
+    name: 'Account Manipulation: Change Account Details'
+    tactic: positioning
+    source: f3
 ---
 
 # Securing AWS IAM Permissions

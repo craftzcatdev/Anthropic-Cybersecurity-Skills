@@ -1,10 +1,12 @@
 ---
 name: implementing-browser-isolation-for-zero-trust
-description: 'Deploys remote browser isolation (RBI) as a core component of a Zero Trust architecture. Implements isolation
-  policies with URL categorization and risk-based routing, content disarming and reconstruction (CDR) for file sanitization,
-  data loss prevention controls within isolated sessions, and integration with Secure Web Gateway and ZTNA platforms. Based
-  on Cloudflare Browser Isolation, Menlo Security, and Zscaler RBI approaches. Use when hardening web access against zero-day
-  exploits, phishing, credential theft, and browser-based data exfiltration.
+description: 'Deploys remote browser isolation (RBI) as a core component of a Zero
+  Trust architecture. Implements isolation policies with URL categorization and risk-based
+  routing, content disarming and reconstruction (CDR) for file sanitization, data
+  loss prevention controls within isolated sessions, and integration with Secure Web
+  Gateway and ZTNA platforms. Based on Cloudflare Browser Isolation, Menlo Security,
+  and Zscaler RBI approaches. Use when hardening web access against zero-day exploits,
+  phishing, credential theft, and browser-based data exfiltration.
 
   '
 domain: cybersecurity
@@ -25,6 +27,43 @@ nist_csf:
 - DE.CM-01
 - ID.AM-03
 - PR.DS-02
+mitre_attack:
+- T1046
+- T1040
+- T1557
+- T1071
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  - execution
+  techniques:
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: T1557
+    name: Adversary-in-the-Middle
+    tactic: positioning
+    source: attack
+  - id: T1185
+    name: Browser Session Hijacking
+    tactic: positioning
+    source: attack
+  - id: F1007
+    name: Adversary-in-the-Browser
+    tactic: positioning
+    source: f3
+  - id: F1007.002
+    name: 'Adversary-in-the-Browser: Malicious Browser Extension'
+    tactic: positioning
+    source: f3
+  - id: F1007.003
+    name: 'Adversary-in-the-Browser: Malicious JavaScript Injection'
+    tactic: execution
+    source: f3
 ---
 
 # Implementing Browser Isolation for Zero Trust

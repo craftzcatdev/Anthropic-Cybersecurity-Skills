@@ -1,7 +1,8 @@
 ---
 name: implementing-privileged-access-management-with-cyberark
-description: Deploy CyberArk Privileged Access Management to discover, vault, rotate, and monitor privileged credentials across
-  enterprise infrastructure. This skill covers vault architecture, session isolation, c
+description: Deploy CyberArk Privileged Access Management to discover, vault, rotate,
+  and monitor privileged credentials across enterprise infrastructure. This skill
+  covers vault architecture, session isolation, c
 domain: cybersecurity
 subdomain: identity-access-management
 tags:
@@ -19,6 +20,39 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  - positioning
+  - resource-development
+  techniques:
+  - id: T1586
+    name: Compromise Accounts
+    tactic: resource-development
+    source: attack
+  - id: T1110
+    name: Brute Force
+    tactic: initial-access
+    source: attack
+  - id: F1033
+    name: Insider Access Abuse
+    tactic: initial-access
+    source: f3
+  - id: F1005.002
+    name: 'Account Manipulation: Add Authorized User'
+    tactic: positioning
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
 ---
 # Implementing Privileged Access Management with CyberArk
 

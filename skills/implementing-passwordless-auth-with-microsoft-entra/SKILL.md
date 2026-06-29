@@ -1,9 +1,10 @@
 ---
 name: implementing-passwordless-auth-with-microsoft-entra
-description: 'Implements passwordless authentication using Microsoft Entra ID with FIDO2 security keys, Windows Hello for
-  Business, Microsoft Authenticator passkeys, and certificate-based authentication to eliminate password-based attacks. Activates
-  for requests involving passwordless deployment, FIDO2 passkey configuration, phishing-resistant MFA, or Microsoft Entra
-  authentication method policies.
+description: 'Implements passwordless authentication using Microsoft Entra ID with
+  FIDO2 security keys, Windows Hello for Business, Microsoft Authenticator passkeys,
+  and certificate-based authentication to eliminate password-based attacks. Activates
+  for requests involving passwordless deployment, FIDO2 passkey configuration, phishing-resistant
+  MFA, or Microsoft Entra authentication method policies.
 
   '
 domain: cybersecurity
@@ -23,6 +24,41 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+- T1566
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - initial-access
+  techniques:
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: T1557
+    name: Adversary-in-the-Middle
+    tactic: initial-access
+    source: attack
+  - id: T1110.004
+    name: 'Brute Force:  Credential Stuffing'
+    tactic: initial-access
+    source: attack
+  - id: T1111
+    name: Multi-Factor Authentication Interception
+    tactic: initial-access
+    source: attack
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
+  - id: F1004
+    name: Access with Stolen Session Cookie
+    tactic: initial-access
+    source: f3
 ---
 
 # Implementing Passwordless Auth with Microsoft Entra

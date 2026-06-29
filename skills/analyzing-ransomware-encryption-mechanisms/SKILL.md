@@ -1,9 +1,10 @@
 ---
 name: analyzing-ransomware-encryption-mechanisms
-description: 'Analyzes encryption algorithms, key management, and file encryption routines used by ransomware families to
-  assess decryption feasibility, identify implementation weaknesses, and support recovery efforts. Covers AES, RSA, ChaCha20,
-  and hybrid encryption schemes. Activates for requests involving ransomware cryptanalysis, encryption analysis, key recovery
-  assessment, or ransomware decryption feasibility.
+description: 'Analyzes encryption algorithms, key management, and file encryption
+  routines used by ransomware families to assess decryption feasibility, identify
+  implementation weaknesses, and support recovery efforts. Covers AES, RSA, ChaCha20,
+  and hybrid encryption schemes. Activates for requests involving ransomware cryptanalysis,
+  encryption analysis, key recovery assessment, or ransomware decryption feasibility.
 
   '
 domain: cybersecurity
@@ -22,6 +23,29 @@ nist_csf:
 - RS.AN-03
 - ID.RA-01
 - DE.CM-01
+mitre_attack:
+- T1486
+- T1573.001
+- T1573.002
+- T1027
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - monetization
+  - positioning
+  techniques:
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1047
+    name: Transfer of funds
+    tactic: monetization
+    source: f3
+  - id: T1219
+    name: Remote Access Tools
+    tactic: positioning
+    source: attack
 ---
 
 # Analyzing Ransomware Encryption Mechanisms

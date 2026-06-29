@@ -1,7 +1,7 @@
 ---
 name: detecting-qr-code-phishing-with-email-security
-description: Detect and prevent QR code phishing (quishing) attacks that bypass traditional email security by embedding malicious
-  URLs in QR code images within emails.
+description: Detect and prevent QR code phishing (quishing) attacks that bypass traditional
+  email security by embedding malicious URLs in QR code images within emails.
 domain: cybersecurity
 subdomain: phishing-defense
 tags:
@@ -27,6 +27,39 @@ nist_csf:
 - DE.CM-09
 - RS.CO-02
 - DE.AE-02
+mitre_attack:
+- T1566
+- T1598
+- T1534
+- T1036
+- T1027
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - resource-development
+  - initial-access
+  techniques:
+  - id: T1598
+    name: Phishing for Information
+    tactic: reconnaissance
+    source: attack
+  - id: T1660
+    name: Phishing
+    tactic: initial-access
+    source: attack
+  - id: F1020.002
+    name: 'Create Fake Materials: Fake Website'
+    tactic: resource-development
+    source: f3
+  - id: T1583.001
+    name: 'Acquire Infrastructure: Domains'
+    tactic: resource-development
+    source: attack
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
 ---
 # Detecting QR Code Phishing with Email Security
 

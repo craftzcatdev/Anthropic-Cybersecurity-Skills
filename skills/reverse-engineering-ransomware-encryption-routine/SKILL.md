@@ -1,7 +1,8 @@
 ---
 name: reverse-engineering-ransomware-encryption-routine
-description: Reverse engineer ransomware encryption routines to identify cryptographic algorithms, key generation flaws, and
-  potential decryption opportunities using static and dynamic analysis.
+description: Reverse engineer ransomware encryption routines to identify cryptographic
+  algorithms, key generation flaws, and potential decryption opportunities using static
+  and dynamic analysis.
 domain: cybersecurity
 subdomain: malware-analysis
 tags:
@@ -27,6 +28,30 @@ nist_csf:
 - RS.AN-03
 - ID.RA-01
 - DE.CM-01
+mitre_attack:
+- T1027
+- T1055
+- T1140
+- T1497
+- T1486
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - monetization
+  - positioning
+  techniques:
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1047
+    name: Transfer of funds
+    tactic: monetization
+    source: f3
+  - id: T1219
+    name: Remote Access Tools
+    tactic: positioning
+    source: attack
 ---
 # Reverse Engineering Ransomware Encryption Routine
 

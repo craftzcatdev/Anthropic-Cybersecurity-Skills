@@ -1,7 +1,8 @@
 ---
 name: validating-backup-integrity-for-recovery
-description: Validate backup integrity through cryptographic hash verification, automated restore testing, corruption detection,
-  and recoverability checks to ensure backups are reliable for disaster recovery and ransomware response scenarios.
+description: Validate backup integrity through cryptographic hash verification, automated
+  restore testing, corruption detection, and recoverability checks to ensure backups
+  are reliable for disaster recovery and ransomware response scenarios.
 domain: cybersecurity
 subdomain: incident-response
 tags:
@@ -19,6 +20,34 @@ nist_csf:
 - RS.MA-02
 - RS.AN-03
 - RC.RP-01
+mitre_attack:
+- T1486
+- T1490
+- T1070
+- T1078
+- T1489
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - positioning
+  - monetization
+  techniques:
+  - id: T1531
+    name: Account Access Removal
+    tactic: positioning
+    source: attack
+  - id: F1018
+    name: Convert to Cryptocurrency
+    tactic: monetization
+    source: f3
+  - id: F1047
+    name: Transfer of funds
+    tactic: monetization
+    source: f3
+  - id: F1017.001
+    name: 'Conversion to Physical Monetary Instruments: Cash'
+    tactic: monetization
+    source: f3
 ---
 # Validating Backup Integrity for Recovery
 

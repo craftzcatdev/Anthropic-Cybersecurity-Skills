@@ -1,9 +1,10 @@
 ---
 name: implementing-delinea-secret-server-for-pam
-description: 'Implements Delinea Secret Server for privileged access management (PAM) including secret vault configuration,
-  role-based access policies, automated password rotation, session recording, and integration with Active Directory and cloud
-  platforms. Activates for requests involving PAM deployment, privileged credential vaulting, secret server administration,
-  or password rotation automation.
+description: 'Implements Delinea Secret Server for privileged access management (PAM)
+  including secret vault configuration, role-based access policies, automated password
+  rotation, session recording, and integration with Active Directory and cloud platforms.
+  Activates for requests involving PAM deployment, privileged credential vaulting,
+  secret server administration, or password rotation automation.
 
   '
 domain: cybersecurity
@@ -23,6 +24,39 @@ nist_csf:
 - PR.AA-02
 - PR.AA-05
 - PR.AA-06
+mitre_attack:
+- T1078
+- T1110
+- T1556
+- T1098
+- T1003
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - reconnaissance
+  - initial-access
+  - positioning
+  techniques:
+  - id: T1555.005
+    name: 'Credentials from Password Stores: Password Managers'
+    tactic: reconnaissance
+    source: attack
+  - id: T1110
+    name: Brute Force
+    tactic: initial-access
+    source: attack
+  - id: F1006
+    name: Account Takeover
+    tactic: initial-access
+    source: f3
+  - id: F1006.002
+    name: 'Account Takeover: Exposed Login Credential'
+    tactic: initial-access
+    source: f3
+  - id: F1005
+    name: Account Manipulation
+    tactic: positioning
+    source: f3
 ---
 
 # Implementing Delinea Secret Server for PAM

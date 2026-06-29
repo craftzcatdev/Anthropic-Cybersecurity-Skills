@@ -1,10 +1,13 @@
 ---
 name: implementing-sigstore-for-software-signing
-description: 'Implements Sigstore-based software signing and verification using Cosign keyless signing, Rekor transparency
-  log verification, and Fulcio certificate authority integration to establish cryptographic provenance for container images,
-  binaries, and software artifacts. The practitioner configures OIDC-based identity binding, verifies signing events against
-  the Rekor transparency log, and integrates signing workflows into CI/CD pipelines. Activates for requests involving software
-  supply chain signing, keyless container signing, Sigstore deployment, or artifact provenance verification.
+description: 'Implements Sigstore-based software signing and verification using Cosign
+  keyless signing, Rekor transparency log verification, and Fulcio certificate authority
+  integration to establish cryptographic provenance for container images, binaries,
+  and software artifacts. The practitioner configures OIDC-based identity binding,
+  verifies signing events against the Rekor transparency log, and integrates signing
+  workflows into CI/CD pipelines. Activates for requests involving software supply
+  chain signing, keyless container signing, Sigstore deployment, or artifact provenance
+  verification.
 
   '
 domain: cybersecurity
@@ -27,6 +30,39 @@ nist_csf:
 - GV.SC-03
 - GV.SC-06
 - GV.SC-07
+mitre_attack:
+- T1078
+- T1190
+- T1059
+- T1610
+- T1611
+mitre_f3:
+  version: '1.1'
+  tactics:
+  - resource-development
+  - initial-access
+  - stealth
+  techniques:
+  - id: T1195
+    name: Supply Chain Compromise
+    tactic: initial-access
+    source: attack
+  - id: T1608
+    name: Stage Capabilities
+    tactic: resource-development
+    source: attack
+  - id: T1608.006
+    name: 'Stage Capabilities: SEO Poisoning'
+    tactic: resource-development
+    source: attack
+  - id: T1586
+    name: Compromise Accounts
+    tactic: resource-development
+    source: attack
+  - id: T1070
+    name: Indicator Removal
+    tactic: stealth
+    source: attack
 ---
 # Implementing Sigstore for Software Signing
 
